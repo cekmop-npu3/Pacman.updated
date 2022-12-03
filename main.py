@@ -10,8 +10,8 @@ images = {'1': [pygame.image.load('images/wall.png').convert_alpha(), []]}
 create_map = Map(window, 'map.txt', images)
 hero = Hero(window, 'images/pacman_eating/0.png', 2, 0, [pygame.image.load(f'images/pacman_eating/{i}.png').convert_alpha() for i in range(3)], create_map.pos)
 path = AStar(create_map.map)
-pathes = [[(1, 1), (1, 23), (23, 23), (23, 1)], [(14, 1), (5, 6), (11, 18), (3, 23)], [(1, 6), (7, 10), (17, 1), (19, 20)]]
-enemies = [Enemy(window, 'images/mob_red/0.png', 2, {i: pygame.image.load(f'images/{name}/{i}.png').convert_alpha() for i in range(-90, 270, 90)}, pos) for name, pos in zip(['mob_red', 'mob_pink'], create_map.poses)]
+pathes = [[(1, 23), (1, 1), (23, 23), (23, 1)], [(14, 1), (5, 6), (11, 18), (3, 23)], [(1, 6), (7, 10), (17, 1), (19, 20)], [(9, 19), (19, 7), (15, 2), (5, 3)], [(5, 2), (19, 2), (5, 22), (19, 22)]]
+enemies = [Enemy(window, 'images/mob_red/0.png', 2, {i: pygame.image.load(f'images/{name}/{i}.png').convert_alpha() for i in range(-90, 270, 90)}, pos) for name, pos in zip(['mob_red', 'mob_pink', 'mob_blue', 'mob_orange'], create_map.poses)]
 clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
